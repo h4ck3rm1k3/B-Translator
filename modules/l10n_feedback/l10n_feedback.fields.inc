@@ -89,13 +89,14 @@ function l10n_feedback_create_userprofile_fields() {
     ));
 
   // create a field and instance for 'field_auxiliary_languages'
+  $languages= l10n_feedback_get_languages();
   field_create_field(
     array(
       'field_name' => 'field_auxiliary_languages',
       'type' => 'list_text',
       'cardinality' => 2,
       'entity_types' => array('user'),
-      'settings' => array('allowed_values' => $arr_langs),
+      'settings' => array('allowed_values' => $languages),
     ));
   field_create_instance(
     array(
